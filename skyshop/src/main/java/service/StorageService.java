@@ -46,7 +46,6 @@ public class StorageService {
     public Collection<Product> getAllProducts() {
         return availableProducts.values();
     }
-
     public Collection<Article> getAllArticles() {
         return availableArticles .values();
 

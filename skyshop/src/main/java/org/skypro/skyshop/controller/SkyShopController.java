@@ -20,7 +20,7 @@ public class SkyShopController {
     private final SearchService searchService;
     private final StorageService storageService;
 
-    public SkyShopController(StorageService storageService,
+    public SkyShopController (StorageService storageService,
                              SearchService searchService,
                              BasketService basketService) {
         this.searchService = searchService;

@@ -3,7 +3,6 @@ package org.skypro.skyshop.model.product;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
-
 public class FixPriceProduct extends org.skypro.skyshop.model.product.Product {
     private static final int PRICE = 400;
     private final UUID id;

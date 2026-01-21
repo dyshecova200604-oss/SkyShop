@@ -1,7 +1,6 @@
 package org.skypro.skyshop.model.basket;
 
 import org.skypro.skyshop.model.product.Product;
-
 public class ProductBasket {
     Product[] products = new Product[5];
     private int count;

@@ -7,7 +7,6 @@ public class SearchResult {
         this.title = title;
         this.description = description;
     }
-
     public String getTitle() {
         return title;
     }
