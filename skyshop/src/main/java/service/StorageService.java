@@ -40,7 +40,7 @@ public class StorageService {
         this.availableProducts.put(banana.getId(),banana);
         this.availableProducts.put(apples.getId(),apples);
         this.availableProducts.put(orange.getId(),orange);
-        this.availableProducts.put(laptop.getId(),laptop);
+         this.availableProducts.put(laptop.getId(),laptop);
         this.availableProducts.put(phone.getId(),phone);
     }
     public Collection<Product> getAllProducts() {
