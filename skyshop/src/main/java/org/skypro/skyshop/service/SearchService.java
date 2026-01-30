@@ -1,8 +1,7 @@
-package service;
+package org.skypro.skyshop.service;
 
 import org.skypro.skyshop.model.search.SearchResult;
 import  org.springframework.stereotype.Service;
-import service.StorageService;
 
 import java.util.stream.Collectors;
 import java.util.Collection;
