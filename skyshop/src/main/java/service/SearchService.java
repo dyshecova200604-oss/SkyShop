@@ -6,7 +6,6 @@ import service.StorageService;
 
 import java.util.stream.Collectors;
 import java.util.Collection;
-
 @Service
 public class SearchService {
     private final StorageService storageService;

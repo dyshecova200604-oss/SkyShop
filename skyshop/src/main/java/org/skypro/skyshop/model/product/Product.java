@@ -3,7 +3,6 @@ package org.skypro.skyshop.model.product;
 import org.skypro.skyshop.model.search.Searchable;
 
 import java.util.UUID;
-
 public abstract class Product implements Searchable {
     private UUID id;
     private final String name;

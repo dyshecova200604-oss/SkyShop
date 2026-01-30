@@ -33,7 +33,6 @@ public class DiscountedProduct extends org.skypro.skyshop.model.product.Product 
     public boolean isSpecial() {
         return true;
     }
-
     @Override
     public String getTitle() {
         return "";

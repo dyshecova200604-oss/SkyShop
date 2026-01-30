@@ -5,12 +5,12 @@ package org.skypro.skyshop.controller;
 import org.skypro.skyshop.model.article.Article;
 import org.skypro.skyshop.model.product.Product;
 import org.skypro.skyshop.model.search.SearchResult;
-import org.skypro.skyshop.service.SearchService;
-import org.skypro.skyshop.service.StorageService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import service.SearchService;
+import service.StorageService;
 
 import java.util.Collection;
 
@@ -20,7 +20,7 @@ public class SkyShopController {
     private final SearchService searchService;
     private final StorageService storageService;
 
-    public SkyShopController(StorageService storageService,
+    public SkyShopController (StorageService storageService,
                              SearchService searchService,
                              BasketService basketService) {
         this.searchService = searchService;

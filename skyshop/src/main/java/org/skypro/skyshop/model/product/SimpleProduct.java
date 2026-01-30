@@ -57,7 +57,6 @@ public class SimpleProduct extends Product {
     public UUID getId(){
         return id;
     }
-
     @Override
     public Collection<Object> searchTerm() {
         return List.of();
