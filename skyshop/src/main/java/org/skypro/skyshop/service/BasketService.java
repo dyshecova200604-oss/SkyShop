@@ -1,0 +1,42 @@
+package org.skypro.skyshop.service;
+
+import org.skypro.skyshop.model.basket.BasketItem;
+import org.skypro.skyshop.model.basket.ProductBasket;
+import org.skypro.skyshop.model.basket.UserBasket;
+import org.skypro.skyshop.model.product.Product;
+import org.springframework.stereotype.Service;
+import org.skypro.skyshop.exception.NoSuchProductException;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+
+@Service
+public class BasketService {
+    private final ProductBasket basket;
+    private final StorageService storageService;
+
+    public BasketService(ProductBasket basket, StorageService storageService) {
+        this.basket = basket;
+        this.storageService = storageService;
+    }
+
+    public void addProduct(UUID id)  {
+        Optional<Product> product = storageService.getProductById(id);
+        if (product.isEmpty()) {
+            throw new NoSuchProductException("Продукт с ID " + id + " не найден");
+        }
+        basket.addProduct(id);
+    }
+
+    public UserBasket getUserBasket(){
+        List<BasketItem> items = basket.getProductsInBasket()
+                .entrySet()
+                .stream()
+                .map(p -> new BasketItem(storageService.getProductById(p.getKey()).orElseThrow(), p.getValue()))
+                .toList();
+      return new UserBasket(items);
+    }
+}
+
+

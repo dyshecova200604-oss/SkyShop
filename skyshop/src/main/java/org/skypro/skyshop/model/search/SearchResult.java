@@ -17,7 +17,6 @@ public class SearchResult {
 
     // Метод для создания SearchResult из Searchable
     public static SearchResult fromSearchable(Searchable searchable) {
-        // Предположим, что у Searchable есть методы getTitle() и getDescription()
         String title = searchable.getTitle();
         String description = searchable.getDescription();
 
