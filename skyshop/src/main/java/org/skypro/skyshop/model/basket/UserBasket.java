@@ -1,7 +1,7 @@
 package org.skypro.skyshop.model.basket;
-
+import java.util.stream.Collectors;
 import java.util.List;
-
+import org.skypro.skyshop.model.product.Product;
 public class UserBasket {
    private final List<BasketItem> items;
    private final int totalPrice;

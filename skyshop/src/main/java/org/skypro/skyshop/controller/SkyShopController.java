@@ -1,12 +1,15 @@
 
 package org.skypro.skyshop.controller;
 
-
+import org.skypro.skyshop.exception.NoSuchProductException;
+import org.skypro.skyshop.exception.ShopError;
 import org.skypro.skyshop.model.article.Article;
 import org.skypro.skyshop.model.basket.UserBasket;
 import org.skypro.skyshop.model.product.Product;
 import org.skypro.skyshop.model.search.SearchResult;
 import org.skypro.skyshop.service.BasketService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.skypro.skyshop.service.SearchService;
 import org.skypro.skyshop.service.StorageService;
@@ -52,5 +55,13 @@ public class SkyShopController {
     @GetMapping("/basket")
     public UserBasket getUserBasket(){
         return basketService.getUserBasket();
+    }
+    @ControllerAdvice
+    public class GlobalExceptionHandler {
+        @ExceptionHandler(NoSuchProductException.class)
+        public ResponseEntity<ShopError> handleNoSuchProductException(NoSuchProductException ex) {
+            ShopError error = new ShopError("PRODUCT_NOT_FOUND", ex.getMessage());
+            return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+        }
     }
 }
